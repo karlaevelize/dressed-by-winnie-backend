@@ -10,7 +10,8 @@ module.exports = {
         type: Sequelize.INTEGER,
       },
       status: {
-        type: Sequelize.STRING,
+        type: Sequelize.ENUM,
+        values: ["processing", "accepted", "preparing", "shipped", "arrived"],
         allowNull: false,
         defaultValue: "processing",
       },
@@ -22,6 +23,18 @@ module.exports = {
         type: Sequelize.BOOLEAN,
         allowNull: false,
         defaultValue: false,
+      },
+      streetAndNumber: {
+        type: Sequelize.STRING,
+      },
+      postcode: {
+        type: Sequelize.STRING,
+      },
+      city: {
+        type: Sequelize.STRING,
+      },
+      country: {
+        type: Sequelize.STRING,
       },
       userId: {
         type: Sequelize.INTEGER,

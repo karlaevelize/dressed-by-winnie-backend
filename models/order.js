@@ -19,7 +19,8 @@ module.exports = (sequelize, DataTypes) => {
   Order.init(
     {
       status: {
-        type: DataTypes.STRING,
+        type: DataTypes.ENUM,
+        values: ["processing", "accepted", "preparing", "shipped", "arrived"],
         allowNull: false,
         defaultValue: "processing",
       },
@@ -32,7 +33,11 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         defaultValue: false,
       },
-      userId: DataTypes.INTEGER,
+      streetAndNumber: { type: DataTypes.STRING },
+      postcode: { type: DataTypes.STRING },
+      city: { type: DataTypes.STRING },
+      country: { type: DataTypes.STRING },
+      userId: { type: DataTypes.INTEGER },
     },
     {
       sequelize,

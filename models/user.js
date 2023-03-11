@@ -18,6 +18,11 @@ module.exports = (sequelize, DataTypes) => {
       lastName: { type: DataTypes.STRING, allowNull: false },
       email: { type: DataTypes.STRING, allowNull: false },
       password: { type: DataTypes.STRING, allowNull: false },
+      admin: { type: DataTypes.BOOLEAN, allowNull: false, defaultValue: false },
+      streetAndNumber: { type: DataTypes.STRING },
+      postcode: { type: DataTypes.STRING },
+      city: { type: DataTypes.STRING },
+      country: { type: DataTypes.STRING },
     },
     {
       sequelize,
