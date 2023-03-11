@@ -29,9 +29,11 @@ module.exports = {
       },
       quantity: {
         type: Sequelize.INTEGER,
+        allowNull: false,
       },
       size: {
         type: Sequelize.STRING,
+        allowNull: false,
       },
       createdAt: {
         allowNull: false,

@@ -18,9 +18,20 @@ module.exports = (sequelize, DataTypes) => {
   }
   Order.init(
     {
-      status: DataTypes.STRING,
-      totalPrice: DataTypes.FLOAT,
-      accepted: DataTypes.BOOLEAN,
+      status: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        defaultValue: "processing",
+      },
+      totalPrice: {
+        type: DataTypes.FLOAT,
+        allowNull: false,
+      },
+      accepted: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+        defaultValue: false,
+      },
       userId: DataTypes.INTEGER,
     },
     {

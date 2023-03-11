@@ -18,10 +18,10 @@ module.exports = (sequelize, DataTypes) => {
   }
   Product.init(
     {
-      name: DataTypes.STRING,
-      price: DataTypes.FLOAT,
-      available: DataTypes.BOOLEAN,
-      imageUrl: DataTypes.STRING,
+      name: { type: DataTypes.STRING, allowNull: false },
+      price: { type: DataTypes.FLOAT, allowNull: false },
+      available: { type: DataTypes.BOOLEAN, allowNull: false },
+      imageUrl: { type: DataTypes.STRING, allowNull: false },
     },
     {
       sequelize,

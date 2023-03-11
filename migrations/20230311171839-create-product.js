@@ -11,12 +11,15 @@ module.exports = {
       },
       name: {
         type: Sequelize.STRING,
+        allowNull: false,
       },
       price: {
         type: Sequelize.FLOAT,
+        allowNull: false,
       },
       available: {
         type: Sequelize.BOOLEAN,
+        allowNull: false,
       },
       imageUrl: {
         type: Sequelize.STRING,

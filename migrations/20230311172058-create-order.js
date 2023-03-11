@@ -11,12 +11,17 @@ module.exports = {
       },
       status: {
         type: Sequelize.STRING,
+        allowNull: false,
+        defaultValue: "processing",
       },
       totalPrice: {
         type: Sequelize.FLOAT,
+        allowNull: false,
       },
       accepted: {
         type: Sequelize.BOOLEAN,
+        allowNull: false,
+        defaultValue: false,
       },
       userId: {
         type: Sequelize.INTEGER,
