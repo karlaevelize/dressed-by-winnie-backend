@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Product.belongsTo(models.Category);
+      Product.belongsTo(models.Category, { foreignKey: "categoryId" });
       Product.belongsToMany(models.Order, {
         through: "OrderProduct",
         foreignKey: "productId",
@@ -20,8 +20,12 @@ module.exports = (sequelize, DataTypes) => {
     {
       name: { type: DataTypes.STRING, allowNull: false },
       price: { type: DataTypes.FLOAT, allowNull: false },
-      available: { type: DataTypes.BOOLEAN, allowNull: false },
-      imageUrl: { type: DataTypes.STRING, allowNull: false },
+      available: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+        defaultValue: true,
+      },
+      imageUrl: { type: DataTypes.TEXT, allowNull: false },
     },
     {
       sequelize,

@@ -20,14 +20,15 @@ module.exports = {
       available: {
         type: Sequelize.BOOLEAN,
         allowNull: false,
+        defaultValue: true,
       },
       imageUrl: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
       },
       categoryId: {
         type: Sequelize.INTEGER,
         references: {
-          model: "categories",
+          model: "Categories",
           key: "id",
         },
         onUpdate: "CASCADE",
