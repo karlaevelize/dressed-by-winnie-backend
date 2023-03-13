@@ -7,6 +7,7 @@ const { PORT } = require("./config/constants");
 
 //routers
 const productsRouter = require("./routers/products");
+const authRouter = require("./routers/auth");
 
 const app = express();
 
@@ -21,5 +22,6 @@ app.get("/", async (req, res) => {
 
 //routers
 app.use("/products", productsRouter);
+app.use("/auth", authRouter);
 
 app.listen(PORT, () => console.log(`Listening on ${PORT}`));
