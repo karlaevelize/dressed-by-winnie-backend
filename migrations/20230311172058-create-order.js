@@ -19,22 +19,40 @@ module.exports = {
         type: Sequelize.FLOAT,
         allowNull: false,
       },
+      totalItems: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+      },
       accepted: {
         type: Sequelize.BOOLEAN,
         allowNull: false,
         defaultValue: false,
       },
+      email: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
       streetAndNumber: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      apartment: {
         type: Sequelize.STRING,
       },
       postcode: {
         type: Sequelize.STRING,
+        allowNull: false,
       },
       city: {
         type: Sequelize.STRING,
+        allowNull: false,
       },
       country: {
         type: Sequelize.STRING,
+        allowNull: false,
+      },
+      message: {
+        type: Sequelize.TEXT,
       },
       userId: {
         type: Sequelize.INTEGER,

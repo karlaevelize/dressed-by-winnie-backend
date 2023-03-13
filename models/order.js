@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Order.belongsTo(models.User);
+      Order.belongsTo(models.User, { foreignKey: "userId" });
       Order.belongsToMany(models.Product, {
         through: "OrderProduct",
         foreignKey: "orderId",
@@ -28,15 +28,26 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.FLOAT,
         allowNull: false,
       },
+      totalItems: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
       accepted: {
         type: DataTypes.BOOLEAN,
         allowNull: false,
         defaultValue: false,
       },
-      streetAndNumber: { type: DataTypes.STRING },
-      postcode: { type: DataTypes.STRING },
-      city: { type: DataTypes.STRING },
-      country: { type: DataTypes.STRING },
+      email: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      streetAndNumber: { type: DataTypes.STRING, allowNull: false },
+      apartment: {
+        type: DataTypes.STRING,
+      },
+      postcode: { type: DataTypes.STRING, allowNull: false },
+      city: { type: DataTypes.STRING, allowNull: false },
+      country: { type: DataTypes.STRING, allowNull: false },
       userId: { type: DataTypes.INTEGER },
     },
     {
