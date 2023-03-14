@@ -13,7 +13,8 @@ router.post("/", async (req, res, next) => {
     const { userInfo } = req.body;
 
     const { total, quantity } = cart;
-    const { email, street, appt, postcode, city, country, message } = userInfo;
+    const { email, street, appt, postcode, city, country, message, id } =
+      userInfo;
 
     const newOrder = await Order.create({
       totalPrice: total,
@@ -25,7 +26,7 @@ router.post("/", async (req, res, next) => {
       city,
       country,
       message,
-      userId,
+      userId: id ? id : null,
     });
 
     const arrayOfPromises = cart.cart.map(async (item) => {
